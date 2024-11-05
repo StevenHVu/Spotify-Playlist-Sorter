@@ -6,7 +6,7 @@ from spotipy.oauth2 import SpotifyOAuth
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope="playlist-modify-public playlist-modify-private"))
 
 def get_playlist_tracks(playlist_id):
-    results = sp.user_playlist_tracks("your_user_id", playlist_id)
+    results = sp.user_playlist_tracks("vg3e1ffv9kaqgxq1sh5fr6kn4", playlist_id)
     tracks = results['items']
     song_list = []
 
