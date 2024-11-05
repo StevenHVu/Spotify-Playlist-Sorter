@@ -29,11 +29,11 @@ def sort_songs(songs):
 
 def update_playlist(playlist_id, sorted_songs):
     # Clear the playlist
-    sp.user_playlist_replace_tracks("your_user_id", playlist_id, [])
+    sp.user_playlist_replace_tracks("vg3e1ffv9kaqgxq1sh5fr6kn4", playlist_id, [])
     
     # Add sorted songs back to the playlist
     song_ids = [song['id'] for song in sorted_songs]
-    sp.user_playlist_add_tracks("your_user_id", playlist_id, song_ids)
+    sp.user_playlist_add_tracks("vg3e1ffv9kaqgxq1sh5fr6kn4", playlist_id, song_ids)
 
 def main():
     playlist_id = "6Qo2NIZxTKipZDj3215oX6"
