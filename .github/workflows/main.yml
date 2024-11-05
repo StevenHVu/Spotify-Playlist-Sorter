@@ -33,4 +33,4 @@ jobs:
 
       - name: Run Spotify Playlist Sorter
         run: |
-          python main.py --playlist_id "${{ secrets.PLAYLIST_ID }}" --user_id "${{ secrets.USER_ID }}"
+          python sort.py --playlist_id "${{ secrets.PLAYLIST_ID }}" --user_id "${{ secrets.USER_ID }}"
