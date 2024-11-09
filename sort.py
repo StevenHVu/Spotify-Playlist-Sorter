@@ -4,33 +4,25 @@
 
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 import argparse
 import logging
 import os
 
-# load_dotenv()  # Load environment variables from .env
+load_dotenv()  # Load environment variables from .env
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 
 # Load Spotify credentials from environment variables
-# SPOTIPY_CLIENT_ID = os.getenv("SPOTIPY_CLIENT_ID")
-# CLIENT_SECRET = os.getenv("SPOTIPY_CLIENT_SECRET")
-# REDIRECT_URI = os.getenv("SPOTIPY_REDIRECT_URI")
-
-print(f"Client ID: {os.getenv('SPOTIPY_CLIENT_ID')}")
-print(f"Client Secret: {os.getenv('SPOTIPY_CLIENT_SECRET')}")
-print(f"Redirect URI: {os.getenv('SPOTIPY_REDIRECT_URI')}")
+SPOTIPY_CLIENT_ID = os.getenv("SPOTIPY_CLIENT_ID")
+CLIENT_SECRET = os.getenv("SPOTIPY_CLIENT_SECRET")
+REDIRECT_URI = os.getenv("SPOTIPY_REDIRECT_URI")
 
 # Authenticate with Spotify (one-time token)
 # sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=SPOTIPY_CLIENT_ID, client_secret=CLIENT_SECRET, redirect_uri=REDIRECT_URI, scope="playlist-modify-public playlist-modify-private"))
-sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
-    client_id=os.getenv("SPOTIPY_CLIENT_ID"),
-    client_secret=os.getenv("SPOTIPY_CLIENT_SECRET"),
-    redirect_uri=os.getenv("SPOTIPY_REDIRECT_URI"),
-    scope="playlist-modify-public playlist-modify-private"
-))
+sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope="playlist-modify-public playlist-modify-private"))
+
 # Retrieve the songs from the specified playlist
 # Parameters:
 # - playlist_id (str): the id of the Spotify playlist
